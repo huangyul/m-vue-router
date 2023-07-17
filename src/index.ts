@@ -1,1 +1,5 @@
-console.log(1232);
+function add() {
+  return 2;
+}
+
+export default add;

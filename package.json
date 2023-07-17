@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "prepare": "huksy install"
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.2.47"

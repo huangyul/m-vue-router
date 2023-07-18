@@ -4,6 +4,9 @@ importers:
 
   .:
     devDependencies:
+      '@types/node':
+        specifier: ^20.4.2
+        version: 20.4.2
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -37,6 +40,9 @@ importers:
       typedoc:
         specifier: ^0.24.8
         version: 0.24.8(typescript@5.0.2)
+      typedoc-plugin-markdown:
+        specifier: ^3.15.3
+        version: 3.15.3(typedoc@0.24.8)
       typescript:
         specifier: ^5.0.2
         version: 5.0.2
@@ -45,7 +51,7 @@ importers:
     devDependencies:
       vitepress:
         specifier: 1.0.0-beta.5
-        version: 1.0.0-beta.5(@algolia/client-search@4.18.0)(search-insights@2.7.0)
+        version: 1.0.0-beta.5(@algolia/client-search@4.18.0)(@types/node@20.4.2)(search-insights@2.7.0)
 
   packages/router: {}
 
@@ -475,6 +481,10 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@types/node@20.4.2:
+    resolution: {integrity: sha512-Dd0BYtWgnWJKwO1jkmTrzofjK2QXXcai0dmtzvIBhcA+RsG5h8R3xlyta0kGOZRNfL9GuRtb1knmPEhQrePCEw==}
+    dev: true
+
   /@types/web-bluetooth@0.0.17:
     resolution: {integrity: sha512-4p9vcSmxAayx72yn70joFoL44c9MO/0+iVEBIQXe3v2h2SiAsEIo/G5v6ObFWvNKRFjbrVadNf9LqEEZeQPzdA==}
     dev: true
@@ -486,7 +496,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.0-beta.3
+      vite: 4.4.0-beta.3(@types/node@20.4.2)
       vue: 3.3.4
     dev: true
 
@@ -962,6 +972,19 @@ packages:
       slash: 4.0.0
     dev: true
 
+  /handlebars@4.7.7:
+    resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}
+    engines: {node: '>=0.4.7'}
+    hasBin: true
+    dependencies:
+      minimist: 1.2.8
+      neo-async: 2.6.2
+      source-map: 0.6.1
+      wordwrap: 1.0.0
+    optionalDependencies:
+      uglify-js: 3.17.4
+    dev: true
+
   /human-signals@4.3.1:
     resolution: {integrity: sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==}
     engines: {node: '>=14.18.0'}
@@ -1159,6 +1182,10 @@ packages:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
+
+  /neo-async@2.6.2:
+    resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
   /normalize-path@3.0.0:
@@ -1367,6 +1394,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /source-map@0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /string-argv@0.3.2:
     resolution: {integrity: sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==}
     engines: {node: '>=0.6.19'}
@@ -1438,6 +1470,15 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /typedoc-plugin-markdown@3.15.3(typedoc@0.24.8):
+    resolution: {integrity: sha512-idntFYu3vfaY3eaD+w9DeRd0PmNGqGuNLKihPU9poxFGnATJYGn9dPtEhn2QrTdishFMg7jPXAhos+2T6YCWRQ==}
+    peerDependencies:
+      typedoc: '>=0.24.0'
+    dependencies:
+      handlebars: 4.7.7
+      typedoc: 0.24.8(typescript@5.0.2)
+    dev: true
+
   /typedoc@0.24.8(typescript@5.0.2):
     resolution: {integrity: sha512-ahJ6Cpcvxwaxfu4KtjA8qZNqS43wYt6JL27wYiIgl1vd38WW/KWX11YuAeZhuz9v+ttrutSsgK+XO1CjL1kA3w==}
     engines: {node: '>= 14.14'}
@@ -1458,7 +1499,15 @@ packages:
     hasBin: true
     dev: true
 
-  /vite@4.4.0-beta.3:
+  /uglify-js@3.17.4:
+    resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
+    engines: {node: '>=0.8.0'}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /vite@4.4.0-beta.3(@types/node@20.4.2):
     resolution: {integrity: sha512-IC/thYTvArOFRJ4qvvudnu4KKZOVc+gduS3I9OfC5SbP/Rf4kkP7z6Of2QpKeOSVqwIK24khW6VOUmVD/0yzSQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1486,6 +1535,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.4.2
       esbuild: 0.18.13
       postcss: 8.4.26
       rollup: 3.26.2
@@ -1493,7 +1543,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-beta.5(@algolia/client-search@4.18.0)(search-insights@2.7.0):
+  /vitepress@1.0.0-beta.5(@algolia/client-search@4.18.0)(@types/node@20.4.2)(search-insights@2.7.0):
     resolution: {integrity: sha512-/RjqqRsSEKkzF6HhK5e5Ij+bZ7ETb9jNCRRgIMm10gJ+ZLC3D1OqkE465lEqCeJUgt2HZ6jmWjDqIBfrJSpv7w==}
     hasBin: true
     dependencies:
@@ -1508,7 +1558,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.3
-      vite: 4.4.0-beta.3
+      vite: 4.4.0-beta.3(@types/node@20.4.2)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1576,6 +1626,10 @@ packages:
     hasBin: true
     dependencies:
       isexe: 2.0.0
+    dev: true
+
+  /wordwrap@1.0.0:
+    resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
     dev: true
 
   /wrap-ansi@6.2.0:
